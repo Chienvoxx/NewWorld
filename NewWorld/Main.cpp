@@ -325,6 +325,8 @@ int main()
 		gameEntity->entityModel->shader.setMat4("projection", projection);
 		gameEntity->entityModel->Draw(gameEntity->entityModel->shader);
 
+		// adding a comment so I can check out commits on Git
+
 		// glBindVertexArray(0); // no need to unbind it every time 
 
 
