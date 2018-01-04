@@ -25,6 +25,7 @@
 #include <timer.h>
 #include <world.h>
 #include <model.h>
+#include <utils.h>
 
 namespace fs = std::experimental::filesystem;
 
@@ -234,10 +235,12 @@ int main()
 	world.turnLightOn(glm::vec3(3.0f, 4.0f, -1.0f));
 	world.createPlayer(glm::vec3(-4.0f, 6.0f, 0.0f));
 
-/*
-	Model ourModel(fs::absolute("models/cube_uv/cube_uv.blend").string());
-	Shader ourShader("./shaders/Shader_Diffuse.vs", "./shaders/Shader_Diffuse.fs");
-*/
+
+	//Model ourModel(fs::absolute("models/cube_uv/cube_uv.blend").string());
+	//perror("error state after instaniating model");
+	//Shader ourShader("./shaders/Shader_Diffuse.vs", "./shaders/Shader_Diffuse.fs");
+	//perror("error state after loading shaders");
+
 
 	// game loop
 	while (!glfwWindowShouldClose(window))
@@ -324,8 +327,6 @@ int main()
 		gameEntity->entityModel->shader.setMat4("view", view);
 		gameEntity->entityModel->shader.setMat4("projection", projection);
 		gameEntity->entityModel->Draw(gameEntity->entityModel->shader);
-
-		// adding a comment so I can check out commits on Git
 
 		// glBindVertexArray(0); // no need to unbind it every time 
 
