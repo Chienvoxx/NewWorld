@@ -13,6 +13,7 @@ std::string readTextFile(const char *filename);
 std::vector<std::string> readTextFileLines(const char *file);
 //std::vector<std::string> readTextFileLines(std::string const &path);
 std::string findFileOrThrow(const std::string &strBasename);
+std::vector<std::string> tokenize(const std::string &s, const char &c);
 
 
 #endif // !_UTILS_H

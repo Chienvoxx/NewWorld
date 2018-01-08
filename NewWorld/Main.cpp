@@ -244,7 +244,9 @@ int main()
 	//std::vector<std::string> lines = readTextFileLines("./models/cube_uv/cube_uv.obj");
 	//std::vector<std::string> lines = readTextFileLines("./models/cube_uv/cube_uv.obj");
 
-	Model ourModel("./models/cube_uv/cube_uv.obj");
+	// path, file_name.
+	// model class will appned .obj and .mtl to open file_name.obj and file_name.mtl
+	Model ourModel("./models/cube_uv/", "cube_uv");
 
 
 	// game loop

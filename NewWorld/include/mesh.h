@@ -36,6 +36,7 @@ public:
 	std::vector<Texture> _textures;
 	unsigned int VAO;
 	/* Functions */
+	Mesh() {}
 	Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices, std::vector<Texture> textures) :
 		_vertices(vertices),
 		_indices(indices),
