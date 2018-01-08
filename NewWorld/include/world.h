@@ -1,8 +1,8 @@
 #pragma once
 
 #include <map>
-#include <vector>
-#include <tuple>
+//#include <vector>
+//#include <tuple>
 
 #include <glm\glm.hpp>
 #include <glm\gtc\matrix_transform.hpp>
@@ -16,7 +16,7 @@
 #include <timer.h>
 #include <chunk.h>
 
-float vertices[] = {
+float worldCubeVertices[] = {
 	// positions			// texture coords
 	-0.5f, -0.5f, -0.5f,	0.0f, 0.0f,
 	0.5f, -0.5f, -0.5f,		1.0f, 0.0f,
@@ -195,8 +195,8 @@ public:
 
 	void createEntityModel()
 	{
-		std::vector<float> v(vertices, vertices + sizeof vertices / sizeof vertices[0]);
-		p_em1 = new EntityModel("./shaders/Shell.vs", "./shaders/Shell.fs", sizeof vertices, &v);
+		std::vector<float> v(worldCubeVertices, worldCubeVertices + sizeof worldCubeVertices / sizeof worldCubeVertices[0]);
+		p_em1 = new EntityModel("./shaders/Shell.vs", "./shaders/Shell.fs", sizeof worldCubeVertices, &v);
 	}
 
 	void addOneChunk(std::tuple<int, int> loc)
@@ -219,16 +219,16 @@ public:
 
 	void turnLightOn(glm::vec3 pos)
 	{
-		std::vector<float> v(vertices, vertices + sizeof vertices / sizeof vertices[0]);
-		EntityModel *lightModel = new EntityModel("./shaders/Lights.vs", "./shaders/Lights.fs", sizeof vertices, &v);
+		std::vector<float> v(worldCubeVertices, worldCubeVertices + sizeof worldCubeVertices / sizeof worldCubeVertices[0]);
+		EntityModel *lightModel = new EntityModel("./shaders/Lights.vs", "./shaders/Lights.fs", sizeof worldCubeVertices, &v);
 		
 		light = GameEntity(lightModel, pos);
 	}
 
 	void createPlayer(glm::vec3 pos)
 	{
-		std::vector<float> v(vertices, vertices + sizeof vertices / sizeof vertices[0]);
-		EntityModel *playerModel = new EntityModel("./shaders/Shell.vs", "./shaders/Shell.fs", sizeof vertices, &v);
+		std::vector<float> v(worldCubeVertices, worldCubeVertices + sizeof worldCubeVertices / sizeof worldCubeVertices[0]);
+		EntityModel *playerModel = new EntityModel("./shaders/Shell.vs", "./shaders/Shell.fs", sizeof worldCubeVertices, &v);
 
 		player = GameEntity(playerModel, pos);
 	}

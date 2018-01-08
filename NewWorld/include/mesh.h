@@ -102,6 +102,8 @@ private:
 		The macro returns the byte offset of that variable from the start of the struct.
 		This is perfect for defining the offset parameter of the glVertexAttribPointer function. */
 
+		size_t size = offsetof(Vertex, Position);
+
 		// set the vertex attribure pointers
 		// vertex positions
 		glEnableVertexAttribArray(0);

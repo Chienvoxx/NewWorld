@@ -3,8 +3,8 @@
 #ifndef _CHUNK_H
 #define _CHUNK_H
 
-#include <vector>
-#include <tuple>
+//#include <vector>
+//#include <tuple>
 
 #include <glm\glm.hpp>
 #include <glm\gtc\matrix_transform.hpp>

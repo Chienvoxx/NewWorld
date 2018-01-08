@@ -41,15 +41,16 @@ int checkErrorBits(const std::ifstream &f) {
 	return stop;
 }
 
-std::vector<std::string> readTextFileLines(const char *filename)
+std::vector<std::string> readTextFileLines(const char *file)
 {	// vector of strings, each containing one line of a given file.
 	// https://gehrcke.de/2011/06/reading-files-in-c-using-ifstream-dealing-correctly-with-badbit-failbit-eofbit-and-perror/
 	std::vector<std::string> lines;
 
 	std::string line;
-	int getlinecount = 1;
+	//int getlinecount = 1;
 
-	std::ifstream f(filename);
+	std::ifstream f;
+	f.open(file);
 	perror("error state after ifstream constructor");
 	if (!f.is_open())
 		perror("is_open() returned false. error state");
@@ -66,8 +67,9 @@ std::vector<std::string> readTextFileLines(const char *filename)
 			}
 			// This is the actual operation on the data obtained and we want to
 			// protect it from errors during the last IO operation on the stream
-			std::cout << "data line " << getlinecount << ": " << line << std::endl;
-			getlinecount++;
+			//std::cout << "data line " << getlinecount << ": " << line << std::endl;
+			//getlinecount++;
+			lines.push_back(line);
 		}
 	}
 	f.close();

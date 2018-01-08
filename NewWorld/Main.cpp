@@ -196,7 +196,7 @@ int main()
 	//world.addOneChunk(std::make_tuple(0, 0));
 	world.updateChunks(std::make_tuple(0, 0));
 
-	std::vector<float> v(vertices, vertices + sizeof vertices / sizeof vertices2[0]);
+	std::vector<float> v(worldCubeVertices, worldCubeVertices + sizeof worldCubeVertices / sizeof vertices2[0]);
 	EntityModel em1("./shaders/Shell.vs", "./shaders/Shell.fs", sizeof vertices2, &v);
 
 	// Set up a single entity/cube via class abstraction
@@ -240,6 +240,11 @@ int main()
 	//perror("error state after instaniating model");
 	//Shader ourShader("./shaders/Shader_Diffuse.vs", "./shaders/Shader_Diffuse.fs");
 	//perror("error state after loading shaders");
+
+	//std::vector<std::string> lines = readTextFileLines("./models/cube_uv/cube_uv.obj");
+	//std::vector<std::string> lines = readTextFileLines("./models/cube_uv/cube_uv.obj");
+
+	Model ourModel("./models/cube_uv/cube_uv.obj");
 
 
 	// game loop
